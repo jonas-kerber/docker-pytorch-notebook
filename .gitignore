@@ -1,5 +1,5 @@
 # only keep blank folder for git and ignore all files within
 exchange/*
 !exchange/.gitkeep 
-notebooks/*
-!notebooks/.gitkeep 
+work/*
+!work/.gitkeep 
