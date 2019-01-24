@@ -1,7 +1,17 @@
 # docker-pytorch-notebook
+
+
+
+| <p><img width="300" src="https://upload.wikimedia.org/wikipedia/commons/7/79/Docker_%28container_engine%29_logo.png" /></p> | <p><img width="300" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" /></p> | <p><img width="300" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/250px-Jupyter_logo.svg.png" /></p> |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|           Docker          |          Pytorch          | Jupyter notebook          |
+
+
+
 ## Overview
-This repo provides the means to run Pytorch(CPU installation) and Jupyter Notebook inside a docker container. 
-Through exposing the port you can access the notebooks via a web browser on your host system. A folder is mounted on the docker container so you can access your notebooks and other files from both host and container.
+This repo provides the means to run Pytorch(CPU installation) and Jupyter notebook inside a Docker container.  
+By exposing the port you can access the notebooks via a web browser on your host system.  
+A folder is mounted on the docker container so you can access your notebooks and other files from both host and container.
 
 ## First-steps
 ### Building the docker image
