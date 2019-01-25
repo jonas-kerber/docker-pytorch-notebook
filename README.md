@@ -49,7 +49,7 @@ This opens a bash session inside the container. Note that all changes will be lo
 
 ### (Note) Auto-removing docker container
 By specifying the --rm flag in *docker-run.sh* the container is removed after it ends.  
-This is the intended behavior because we want to keep the docker container clean. If you want to e.g. add packages to the container add them as a RUN step in the Dockerfile and rebuild the image.
+This is the intended behavior because we want to keep the docker container clean. If you want to e.g. add packages to the container add them as a RUN step in the Dockerfile and rebuild the image. Alternatively you can [docker commit](https://docs.docker.com/engine/reference/commandline/commit/) the changes of a container to a new image.
 
 However there are two folders that are mounted from the host system and therefore are persistent between sessions:
 * *work:* All the files created by the Jupyter notebooks are saved in here. This saves the notebooks between sessions and also makes them accessible on your host.
