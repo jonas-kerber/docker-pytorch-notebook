@@ -45,7 +45,8 @@ If you want to access the file system of the container, type:
 # docker exec -it pytorch_notebook bash
 source docker_join.sh
 ```
-This opens a bash session inside the container. Note that all changes will be lost after you exit the container. More information in the following chapter.
+This opens a bash session inside the container. The default user is "joyvan" and the password is also "joyvan".  
+Note that all changes will be lost after you exit the container. More information in the following chapter.
 
 ### (Note) Auto-removing docker container
 By specifying the --rm flag in *docker-run.sh* the container is removed after it ends.  
