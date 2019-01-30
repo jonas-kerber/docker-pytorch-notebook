@@ -62,6 +62,6 @@ However there are two folders that are mounted from the host system and therefor
 ### Change theme of Jupyter UI
 By installing [jupyter-themes](https://github.com/dunovank/jupyter-themes) you are able to change the Jupyter UI (e.g. if you want a darker theme). To do this uncomment the section _"(optional) Install and switch jupyter theme"_ in the Dockerfile.
 
-If you want to try out different themes join a running container and type ```jt -t list``` to display available themes and type ```jt -t THEMENAME``` to change the theme. A simple reload of the browser page will update the UI.
+If you want to try out different themes join a running container and type ```jt -t list``` to display available themes and type ```jt -t THEMENAME``` to change the theme. A simple reload of the browser page will update the UI. To reset to default UI type ```jt -r```.
 
 Currently, 9 alternative themes are supported: _chesterish, grade3, gruvboxd, gruvboxl, monokai, oceans16, onedork, solarizedd, solarizedl._
