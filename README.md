@@ -11,7 +11,8 @@
 ## Overview
 This repo provides the means to run Pytorch(CPU installation) and Jupyter notebook inside a Docker container.  
 By exposing the port you can access the notebooks via a web browser on your host system.  
-A folder is mounted on the docker container so you can access your notebooks and other files from both host and container.
+The container is self-cleaning, i.e. it resets everytime you restart it.  
+Only two folders (one for notebooks, one for other data exchange) are persistent because they are mounted from the host making them also accessible from both host and container.
 
 ## First-steps
 For convenience the necessary docker commands are saved in one-line bash scripts so you don't have to type them every time.  
@@ -55,3 +56,12 @@ This is the intended behavior because we want to keep the docker container clean
 However there are two folders that are mounted from the host system and therefore are persistent between sessions:
 * *work:* All the files created by the Jupyter notebooks are saved in here. This saves the notebooks between sessions and also makes them accessible on your host.
 * *exchange:* This folder can be accessed by both host and container if data needs to be exchanged (other than the notebooks).
+
+## Additional features
+
+### Change theme of Jupyter UI
+By installing [jupyter-themes](https://github.com/dunovank/jupyter-themes) you are able to change the Jupyter UI (e.g. if you want a darker theme). To do this uncomment the section _"(optional) Install and switch jupyter theme"_ in the Dockerfile.
+
+If you want to try out different themes join a running container and type ```jt -t list``` to display available themes and type ```jt -t THEMENAME``` to change the theme. A simple reload of the browser page will update the UI.
+
+Currently, 9 alternative themes are supported: _chesterish, grade3, gruvboxd, gruvboxl, monokai, oceans16, onedork, solarizedd, solarizedl._
