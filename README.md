@@ -15,13 +15,20 @@ The container is self-cleaning, i.e. it resets everytime you restart it.
 Only two folders (one for notebooks, one for other data exchange) are persistent because they are mounted from the host making them also accessible from both host and container.
 
 ## First-steps
-For convenience the necessary docker commands are saved in one-line bash scripts so you don't have to type them every time.  
-For better understanding they are added in comments below.
+For convenience the necessary docker commands are saved in one-line bash scripts so you don't have to type them every time. For better understanding they are added in comments below.
+
+### Post-installtion step
+Make bash files executable:
+```bash
+chmod +x docker_*.sh
+```
+
+
 ### Building the docker image
 To build the image, type:
 ```bash
 # docker build -t pytorch_notebook_img .
-source docker_build.sh
+./docker_build.sh
 ```
 This will take a while if you run it for the first time because it needs to pull the [scipy-notebook](https://hub.docker.com/r/jupyter/scipy-notebook) base-image and installs pytorch on top of it.
 
@@ -29,7 +36,7 @@ This will take a while if you run it for the first time because it needs to pull
 To run the previously built image, type:
 ```bash
 # docker run -it --rm --name pytorch_notebook -p 8888:8888 -v $(pwd)/exchange:/home/jovyan/exchange -v $(pwd)/notebooks:/home/jovyan/work pytorch_notebook_img
-source docker_run.sh
+./docker_run.sh
 ```
 By forwarding port 8888 you can then access the Jupyter notebook from your host.
 
@@ -44,12 +51,19 @@ Once you have finished working with the notebooks press *CTRL+C* in the terminal
 If you want to access the file system of the container, type:
 ```bash
 # docker exec -it pytorch_notebook bash
-source docker_join.sh
+./docker_join.sh
 ```
 This opens a bash session inside the container. The default user is "joyvan" and the password is also "joyvan".  
 Note that all changes will be lost after you exit the container. More information in the following chapter.
 
-### (Note) Auto-removing docker container
+### (Note) Auto-removi## Additional features
+
+### Change theme of Jupyter UI
+By installing [jupyter-themes](https://github.com/dunovank/jupyter-themes) you are able to change the Jupyter UI (e.g. if you want a darker theme). To do this uncomment the section _"(optional) Install and switch jupyter theme"_ in the Dockerfile.
+
+If you want to try out different themes join a running container and type ```jt -t list``` to display available themes and type ```jt -t THEMENAME``` to change the theme. A simple reload of the browser page will update the UI.
+
+Currently, 9 alternative themes are supported: _chesterish, grade3, gruvboxd, gruvboxl, monokai, oceans16, onedork, solarizedd, solarizedl._ng docker container
 By specifying the --rm flag in *docker-run.sh* the container is removed after it ends.  
 This is the intended behavior because we want to keep the docker container clean. If you want to e.g. add packages to the container add them as a RUN step in the Dockerfile and rebuild the image. Alternatively you can [docker commit](https://docs.docker.com/engine/reference/commandline/commit/) the changes of a container to a new image.
 
