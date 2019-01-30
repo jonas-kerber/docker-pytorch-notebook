@@ -77,3 +77,7 @@ If you want to use JupyerLab instead of Jupyter notebook use
 ```
 instead of ```./docker_run.sh```. Otherwise the steps are the same.  
 Note that [jupyter-themes](https://github.com/dunovank/jupyter-themes) are currently not supported for JupyterLab.
+
+## Supported Host OS
+Currently this setup is only tested on a MacOS host. Should work on linux hosts as well.
+I am not sure if it works on Windows. I think the Dockerfile should work. You might have to manually enter the .sh files into the terminal window. I am happy for feedback.
