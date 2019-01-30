@@ -56,7 +56,11 @@ If you want to access the file system of the container, type:
 This opens a bash session inside the container. The default user is "joyvan" and the password is also "joyvan".  
 Note that all changes will be lost after you exit the container. More information in the following chapter.
 
-### (Note) Auto-removi## Additional features
+### (Note) Auto-removing docker container
+By specifying the --rm flag in *docker-run.sh* the container is removed after it ends.
+This is the intended behavior because we want to keep the docker container clean. If you want to e.g. add packages to the container add them as a RUN step in the Dockerfile and rebuild the image. Alternatively you can [docker commit](https://docs.docker.com/engine/reference/commandline/commit/) the changes of a container to a new image.
+
+## Additional features
 
 ### Change theme of Jupyter UI
 By installing [jupyter-themes](https://github.com/dunovank/jupyter-themes) you are able to change the Jupyter UI (e.g. if you want a darker theme). To do this uncomment the section _"(optional) Install and switch jupyter theme"_ in the Dockerfile.
@@ -64,18 +68,3 @@ By installing [jupyter-themes](https://github.com/dunovank/jupyter-themes) you a
 If you want to try out different themes join a running container and type ```jt -t list``` to display available themes and type ```jt -t THEMENAME``` to change the theme. A simple reload of the browser page will update the UI.
 
 Currently, 9 alternative themes are supported: _chesterish, grade3, gruvboxd, gruvboxl, monokai, oceans16, onedork, solarizedd, solarizedl._ng docker container
-By specifying the --rm flag in *docker-run.sh* the container is removed after it ends.  
-This is the intended behavior because we want to keep the docker container clean. If you want to e.g. add packages to the container add them as a RUN step in the Dockerfile and rebuild the image. Alternatively you can [docker commit](https://docs.docker.com/engine/reference/commandline/commit/) the changes of a container to a new image.
-
-However there are two folders that are mounted from the host system and therefore are persistent between sessions:
-* *work:* All the files created by the Jupyter notebooks are saved in here. This saves the notebooks between sessions and also makes them accessible on your host.
-* *exchange:* This folder can be accessed by both host and container if data needs to be exchanged (other than the notebooks).
-
-## Additional features
-
-### Change theme of Jupyter UI
-By installing [jupyter-themes](https://github.com/dunovank/jupyter-themes) you are able to change the Jupyter UI (e.g. if you want a darker theme). To do this uncomment the section _"(optional) Install and switch jupyter theme"_ in the Dockerfile.
-
-If you want to try out different themes join a running container and type ```jt -t list``` to display available themes and type ```jt -t THEMENAME``` to change the theme. A simple reload of the browser page will update the UI. To reset to default UI type ```jt -r```.
-
-Currently, 9 alternative themes are supported: _chesterish, grade3, gruvboxd, gruvboxl, monokai, oceans16, onedork, solarizedd, solarizedl._
