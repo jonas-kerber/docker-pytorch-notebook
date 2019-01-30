@@ -15,6 +15,5 @@ RUN apt-get install -y vim less
 USER jovyan
 
 ##### (optional) Install and switch jupyter theme
-RUN conda install -y jupyterthemes
-RUN jt -t gruvboxd #check other themes by calling 'jt -t list'
-
+#RUN conda install -y jupyterthemes
+#RUN jt -t gruvboxd
