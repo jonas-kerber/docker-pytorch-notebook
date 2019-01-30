@@ -4,7 +4,7 @@
 
 | <p><img width="300" src="https://upload.wikimedia.org/wikipedia/commons/7/79/Docker_%28container_engine%29_logo.png" /></p> | <p><img width="300" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" /></p> | <p><img width="300" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/250px-Jupyter_logo.svg.png" /></p> |
 |:-------------------------:|:-------------------------:|:-------------------------:|
-|           Docker          |          Pytorch          | Jupyter notebook          |
+|           Docker          |          Pytorch          | Jupyter notebook/ JupyterLab |
 
 
 
@@ -67,4 +67,13 @@ By installing [jupyter-themes](https://github.com/dunovank/jupyter-themes) you a
 
 If you want to try out different themes join a running container and type ```jt -l``` to display available themes and type ```jt -t THEMENAME``` to change the theme. A simple reload of the browser page will update the UI.
 
-Currently, 9 alternative themes are supported: _chesterish, grade3, gruvboxd, gruvboxl, monokai, oceans16, onedork, solarizedd, solarizedl._ng docker container
+Currently, 9 alternative themes are supported: _chesterish, grade3, gruvboxd, gruvboxl, monokai, oceans16, onedork, solarizedd, solarizedl._
+
+### Use JupyterLab
+If you want to use JupyerLab instead of Jupyter notebook use
+```bash
+# docker run -it --rm --name pytorch_notebook -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v $(pwd)/exchange:/home/jovyan/exchange -v $(pwd)/notebooks:/home/jovyan/work pytorch_notebook_img
+./docker_labrun.sh
+```
+instead of ```./docker_run.sh```. Otherwise the steps are the same.  
+Note that [jupyter-themes](https://github.com/dunovank/jupyter-themes) are currently not supported for JupyterLab.
