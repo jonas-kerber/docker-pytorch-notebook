@@ -1,3 +1,5 @@
+.DS_Store
+
 # only keep blank folder for git and ignore all files within
 exchange/*
 !exchange/.gitkeep 
