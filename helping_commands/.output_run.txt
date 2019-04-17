@@ -1,0 +1,25 @@
+Executing the command: jupyter notebook
+[32m[I 16:39:59.151 NotebookApp](B[m Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
+[32m[I 16:39:59.357 NotebookApp](B[m JupyterLab extension loaded from /opt/conda/lib/python3.7/site-packages/jupyterlab
+[32m[I 16:39:59.357 NotebookApp](B[m JupyterLab application directory is /opt/conda/share/jupyter/lab
+[32m[I 16:39:59.359 NotebookApp](B[m Serving notebooks from local directory: /home/jovyan
+[32m[I 16:39:59.360 NotebookApp](B[m The Jupyter Notebook is running at:
+[32m[I 16:39:59.360 NotebookApp](B[m http://(035b0b2d1b0d or 127.0.0.1):8888/?token=b01931618a63a0c0b65281b9e28634d37f955de4566cc513
+[32m[I 16:39:59.360 NotebookApp](B[m Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 16:39:59.366 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/jovyan/.local/share/jupyter/runtime/nbserver-8-open.html
+    Or copy and paste one of these URLs:
+        http://(035b0b2d1b0d or 127.0.0.1):8888/?token=b01931618a63a0c0b65281b9e28634d37f955de4566cc513
+[33m[W 16:39:59.602 NotebookApp](B[m Clearing invalid/expired login cookie username-localhost-8888
+[33m[W 16:39:59.604 NotebookApp](B[m Forbidden
+[33m[W 16:39:59.606 NotebookApp](B[m 403 GET /api/kernelspecs?1553877599589 (172.17.0.1) 4.36ms referer=http://localhost:8888/lab?
+^C[32m[I 16:40:03.831 NotebookApp](B[m interrupted
+Serving notebooks from local directory: /home/jovyan
+0 active kernels
+The Jupyter Notebook is running at:
+http://(035b0b2d1b0d or 127.0.0.1):8888/?token=b01931618a63a0c0b65281b9e28634d37f955de4566cc513
+Shutdown this notebook server (y/[n])? y
+[C 16:40:05.393 NotebookApp] Shutdown confirmed
+[32m[I 16:40:05.393 NotebookApp](B[m Shutting down 0 kernels
